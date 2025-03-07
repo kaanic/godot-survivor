@@ -26,6 +26,7 @@ window/stretch/mode="viewport"
 [global_group]
 
 player="Group for the player scene."
+enemy="Group for enemy nodes."
 
 [input]
 
