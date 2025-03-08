@@ -6,13 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://bx87pn68eu0gg" path="res://scenes/ui/arena_time_ui.tscn" id="1_vxbbg"]
 [ext_resource type="TileSet" uid="uid://cur1tbsnvaxqp" path="res://resources/tileset.tres" id="1_ym2ac"]
 [ext_resource type="PackedScene" uid="uid://cq0i2ydsj1hok" path="res://scenes/manager/arena_time_manager.tscn" id="2_cih8e"]
+[ext_resource type="PackedScene" uid="uid://du1nj2vcrwxd8" path="res://scenes/ui/experience_bar.tscn" id="2_k4sfh"]
 [ext_resource type="PackedScene" uid="uid://t26jn2rsm011" path="res://scenes/manager/experience_manager.tscn" id="4_idayq"]
-[ext_resource type="PackedScene" uid="uid://duyc3j5n4v1cc" path="res://scenes/game_object/experience_vial/experience_vial.tscn" id="7_y0jai"]
 
 [node name="Main" type="Node"]
 
 [node name="ArenaTimeUI" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_vxbbg")]
 arena_time_manager = NodePath("../ArenaTimeManager")
+
+[node name="ExperienceBar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("2_k4sfh")]
+experience_manager = NodePath("../ExperienceManager")
 
 [node name="ArenaTimeManager" parent="." instance=ExtResource("2_cih8e")]
 
@@ -28,9 +31,3 @@ tile_set = ExtResource("1_ym2ac")
 
 [node name="Player" parent="." instance=ExtResource("1_iiyco")]
 position = Vector2(335, 177)
-
-[node name="ExperienceVial" parent="." instance=ExtResource("7_y0jai")]
-position = Vector2(264, 181)
-
-[node name="ExperienceVial2" parent="." instance=ExtResource("7_y0jai")]
-position = Vector2(285, 234)
