@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpjai6ixomllk"]
+[gd_scene load_steps=13 format=3 uid="uid://bpjai6ixomllk"]
 
 [ext_resource type="Script" path="res://scenes/game_object/basic_enemy/basic_enemy.gd" id="1_pc7ru"]
 [ext_resource type="Texture2D" uid="uid://bhgb33qsa2rs1" path="res://scenes/game_object/basic_enemy/basic_enemy.png" id="2_sx4gh"]
 [ext_resource type="PackedScene" uid="uid://bvmkcpcbmykkw" path="res://scenes/component/health_component.tscn" id="2_vl3k4"]
 [ext_resource type="PackedScene" uid="uid://cscar2ptujvuo" path="res://scenes/component/vial_drop_component.tscn" id="3_ajfrd"]
 [ext_resource type="PackedScene" uid="uid://cuc6wox2sdmac" path="res://scenes/component/hurtbox_component.tscn" id="4_2veks"]
+[ext_resource type="PackedScene" uid="uid://cwllhbmirhjhh" path="res://scenes/component/velocity_component.tscn" id="4_dgjsp"]
 [ext_resource type="PackedScene" uid="uid://cw42fniqn4oto" path="res://scenes/component/death_component.tscn" id="4_o5uou"]
 
 [sub_resource type="Animation" id="Animation_pkg45"]
@@ -89,7 +90,10 @@ autoplay = "walk"
 [node name="HealthComponent" parent="." instance=ExtResource("2_vl3k4")]
 
 [node name="VialDropComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_ajfrd")]
+drop_percent = 0.35
 health_component = NodePath("../HealthComponent")
+
+[node name="VelocityComponent" parent="." instance=ExtResource("4_dgjsp")]
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("4_o5uou")]
 health_component = NodePath("../HealthComponent")
