@@ -4,6 +4,7 @@ extends Node
 
 var damage = 10
 
+
 func _ready() -> void:
 	$Timer.timeout.connect(on_timer_timeout)
 

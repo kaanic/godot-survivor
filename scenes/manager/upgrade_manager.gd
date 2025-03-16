@@ -6,6 +6,7 @@ extends Node
 
 var current_upgrades = {}
 
+
 func _ready() -> void:
 	experience_manager.level_up.connect(on_level_up)
 	
@@ -43,6 +44,7 @@ func pick_upgrades():
 		)
 		
 	return chosen_upgrades
+
 
 func on_upgrade_selected(upgrade: AbilityUpgrade):
 	apply_upgrade(upgrade)

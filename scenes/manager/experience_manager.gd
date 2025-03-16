@@ -9,8 +9,10 @@ var current_experience = 0
 var current_level = 1
 var target_experience = 1
 
+
 func _ready() -> void:
 	GameEvents.experience_vial_collected.connect(on_experience_vial_collected)
+
 
 func increment_experience(number: float):
 	current_experience = min(current_experience + number, target_experience)
@@ -22,6 +24,7 @@ func increment_experience(number: float):
 		current_experience = 0
 		experience_updated.emit(current_experience, target_experience)
 		level_up.emit(current_level)
+
 
 func on_experience_vial_collected(number: float):
 	increment_experience(number)

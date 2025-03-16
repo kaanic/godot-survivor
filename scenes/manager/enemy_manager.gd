@@ -9,6 +9,7 @@ const SPAWN_RADIUS = 375
 
 var base_spawn_time = 0
 
+
 func _ready() -> void:
 	base_spawn_time = timer.wait_time
 	
@@ -35,6 +36,7 @@ func get_spawn_position():
 			random_direction = random_direction.rotated(deg_to_rad(90))
 	
 	return spawn_position
+	
 	
 func on_timer_timeout():
 	timer.start() # on continuous play wait_time value cannot change unless the timer fully stops

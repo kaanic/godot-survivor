@@ -4,8 +4,10 @@ extends Node
 @export var health_component: Node
 @export var vial_scene: PackedScene
 
+
 func _ready() -> void:
 	(health_component as HealthComponent).died.connect(on_died)
+	
 	
 func on_died():
 	if randf() > drop_percent:
