@@ -41,3 +41,5 @@ func on_area_entered(other_area: Area2D):
 	tween.chain()
 	tween.tween_callback(collect)
 	
+	await get_tree().create_timer(.4).timeout # syncs the audio with queue_free
+	$RandomStreamPlayer2DComponent.play_random()

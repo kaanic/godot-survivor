@@ -1,10 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://3q37nj4hblv4"]
+[gd_scene load_steps=18 format=3 uid="uid://3q37nj4hblv4"]
 
 [ext_resource type="Texture2D" uid="uid://c7p11jcoq72db" path="res://scenes/game_object/player/player.png" id="1_ngbkr"]
 [ext_resource type="Script" path="res://scenes/game_object/player/player.gd" id="1_rjjqq"]
 [ext_resource type="PackedScene" uid="uid://cwllhbmirhjhh" path="res://scenes/component/velocity_component.tscn" id="2_6n6u8"]
 [ext_resource type="Script" path="res://scenes/component/health_component.gd" id="2_bf7pw"]
 [ext_resource type="PackedScene" uid="uid://blb6bc6g7us2e" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_wido3"]
+[ext_resource type="PackedScene" uid="uid://ig7mb3vlgr2y" path="res://scenes/component/random_stream_player_2d_component.tscn" id="5_unux1"]
+[ext_resource type="AudioStream" uid="uid://ds2xnslvk7o3x" path="res://assets/audio/player_hit_000.ogg" id="6_wh3qy"]
+[ext_resource type="AudioStream" uid="uid://dgiqg1bpv1n5e" path="res://assets/audio/player_hit_001.ogg" id="7_yikqk"]
+[ext_resource type="AudioStream" uid="uid://bbayikfdxg1r5" path="res://assets/audio/player_hit_002.ogg" id="8_chhmp"]
+[ext_resource type="AudioStream" uid="uid://dp4sqhq6frhd3" path="res://assets/audio/player_hit_003.ogg" id="9_v5bhu"]
 
 [sub_resource type="Animation" id="Animation_j27mt"]
 length = 0.001
@@ -130,6 +135,9 @@ script = ExtResource("2_bf7pw")
 [node name="Abilities" type="Node" parent="."]
 
 [node name="SwordAbilityController" parent="Abilities" instance=ExtResource("2_wido3")]
+
+[node name="HitRandomStreamPlayer" parent="." instance=ExtResource("5_unux1")]
+streams = Array[AudioStream]([ExtResource("6_wh3qy"), ExtResource("7_yikqk"), ExtResource("8_chhmp"), ExtResource("9_v5bhu")])
 
 [node name="DamageIntervalTimer" type="Timer" parent="."]
 wait_time = 0.5
