@@ -39,6 +39,7 @@ enemy="Group for enemy nodes."
 entities_layer="Entity layer."
 foreground_layer="Foreground layer."
 upgrade_card=""
+meta_upgrade_card=""
 
 [gui]
 
